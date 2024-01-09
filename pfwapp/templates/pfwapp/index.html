@@ -10,6 +10,14 @@
     </head>
 
     <body>
-        Hello world!
+        
+        {% for project in Projects %}
+            <p>
+                <a>{{project.name}}</a>
+            </p>
+        {% empty %}
+            <p>No Projects!!!</p>
+        {% endfor %}
+            
     </body>
 </html>

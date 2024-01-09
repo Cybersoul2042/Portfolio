@@ -1,5 +1,5 @@
 from django.db import models
 
-class project(models.Model):
-    name = models.CharField(max = 64)
+class Project(models.Model):
+    name = models.CharField(max_length = 64)
     url = models.URLField()
