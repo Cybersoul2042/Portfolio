@@ -1,23 +1,28 @@
+{% extends "pfwapp/layout.html" %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{% static 'pfwapp/index.css' %}">
-        <title>Home</title>
-    </head>
+{% block title %}
+    Home
+{% endblock %}
 
-    <body>
-        
-        {% for project in Projects %}
-            <p>
-                <a>{{project.name}}</a>
-            </p>
-        {% empty %}
-            <p>No Projects!!!</p>
-        {% endfor %}
+{% block script %}
+    
+{% endblock %}
             
-    </body>
-</html>
+{% block body %}
+    {% for project in Projects %}
+        <p>
+            <a>{{project.name}}</a>
+        </p>
+    {% empty %}
+        <p>No Projects!!!</p>
+    {% endfor %}
+{% endblock %}
+
+
+
+    
+    
+        
+    
