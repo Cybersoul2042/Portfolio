@@ -3,7 +3,9 @@ body {
   background-color: rgb(51, 51, 70);
   color: white;
   margin: 0;
-  min-width: 320px;
+  margin-left: 20px;
+  margin-right: 20px;
+  min-width: 300px;
 }
 
 .navbar_container {
@@ -13,7 +15,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-content: center;
   padding: 5px;
 }
@@ -21,39 +23,29 @@ body {
   width: 120px;
   height: 120px;
 }
-.navbar_container .navbar .options {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
-}
-.navbar_container .navbar .options .pages {
+.navbar_container .navbar .pages {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-left: 30vw;
-  margin-right: 30vw;
   font-size: 18px;
 }
-.navbar_container .navbar .options .pages .home-page {
-  margin: 15px;
-  margin-left: 0;
-}
-.navbar_container .navbar .options .pages .projects-page {
+.navbar_container .navbar .pages .home-page {
   margin: 15px;
 }
-.navbar_container .navbar .options .pages .about-page {
+.navbar_container .navbar .pages .projects-page {
   margin: 15px;
-  margin-right: 0;
 }
-.navbar_container .navbar .options .contact {
-  margin: auto;
+.navbar_container .navbar .pages .about-page {
+  margin: 15px;
+}
+.navbar_container .navbar .contact {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   font-size: 18px;
+  margin: 15px;
 }
 
 /*# sourceMappingURL=index.css.map */
