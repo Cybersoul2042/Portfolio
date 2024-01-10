@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'pfwapp/index.css' %}">
+        <title>{% block title %}{% endblock %}</title>
+        {% block script %}
+        {% endblock %}  
+    </head>
+    <body> 
+        <div class="navbar_container">
+            <div class="navbar flex-container">
+                <div class="logo">
+                    <img id="mylogo" src="{{ logo }}" alt="logo">
+                </div>
+                <div class="options">
+                    <div class="pages">
+                        <div class="home-page">
+                            <a>
+                                <p>
+                                    Home
+                                </p>
+                            </a>
+                        </div>
+                        <div class="projects-page">
+                            <a>
+                                <p>
+                                    Projects
+                                </p>
+                            </a>
+                        </div>
+                        <div class="about-page">
+                            <a>
+                                <p>
+                                    About
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact">
+                        <a>
+                            Contact me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% block body %}   
+        {% endblock %}  
+    </body>
+</html>
