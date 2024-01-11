@@ -7,17 +7,27 @@
 {% endblock %}
 
 {% block script %}
-    
+    <script src="{% static 'pfwapp/index.js' %}"></script>
 {% endblock %}
             
 {% block body %}
-    {% for project in Projects %}
-        <p>
-            <a>{{project.name}}</a>
-        </p>
-    {% empty %}
-        <p>No Projects!!!</p>
-    {% endfor %}
+    <div class="pages">
+        <div class="page" id="home" style="display: none;">Home</div>
+
+        <div class="page" id="projects" style="display: none;">
+            {% for project in Projects %}
+                <p>
+                    <a>{{project.name}}</a>
+                </p>
+            {% empty %}
+                <p>No Projects!!!</p>
+            {% endfor %}
+        </div>
+
+        <div class="page" id="about" style="display: none;">About</div>
+
+        <div class="page" id="contact" style="display: none">Contact Us</div>
+    </div>
 {% endblock %}
 
 

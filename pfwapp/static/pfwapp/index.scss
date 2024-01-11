@@ -1,52 +1,78 @@
+@mixin btn($name, $mLeft, $mRight) {
+    ##{$name}-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 35px;
+        margin-left: #{$mLeft};
+        margin-right: #{$mRight};
+        width: 100px; 
+    }
+    ##{$name}-btn:hover{
+        cursor: pointer;
+        background-color: rgba(106, 106, 255, 0.601);
+        text-align: center;
+        border-radius: 8px;
+        width: 100px;
+    }
+}
+
 body{
     font-family: sans-serif;
-    background-color: rgb(51, 51, 70);
+    background-color: rgb(47, 47, 61);
     color: white;
     margin: 0;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
     min-width: 300px;
 }
 .navbar_container{
     width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
     .navbar{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-between;
         align-content: center;
-        padding: 5px;
-        .logo{
+        padding: 10px;
+        #logo{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
             #mylogo{
                 width: 120px;
                 height: 120px;
             } 
         }   
-        .pages{
+        .pages-btn{
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
             font-size: 18px;
-            .home-page{
-                margin: 15px;
-            }
-            .projects-page{
-                margin: 15px;
-            }
-            .about-page{
-                margin: 15px;
-            }
+            @include btn(home, 0px, 35px);
+            @include btn(project, 35px, 35px);
+            @include btn(about, 35px, 0px);
             
         }
-        .contact{
+        #contact-btn{
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
             font-size: 18px;
             margin: 15px;
+            margin-left: 0;
+            margin-right: 0;
         } 
     }
+}
+
+.page-det{
+    padding: 5px;
 }
 
