@@ -99,6 +99,7 @@ body{
 #home-intro-card{
     width: 500px;
     height: 350px;
+    position: relative;
     margin: 80px;
     margin-top: 0;
     border: 1px solid transparent;
@@ -110,6 +111,32 @@ body{
     }
     text-align: center;
 }
+#home-intro-card:after{
+    content: "";
+    height: 70px;
+    width: 1px;  
+    position: absolute;  
+    left: -1px;
+    top: 65%;
+    transition: top, opacity;
+    transition-duration: 600ms;
+    transition-timing-function: ease;
+    background: linear-gradient(
+        transparent,
+        #7d64f9,
+        transparent
+    );
+    opacity: 0;
+}
+#home-intro-card:after {  
+    top: 65%;
+    opacity: 0;
+}
+#home-intro-card:hover:after {
+    top: 25%;
+    opacity: 1;
+}
+
 
 .project-cards{
     display: flex;
@@ -119,8 +146,10 @@ body{
     align-items: center;
 }
 #project-card{
+    transition: width 0.4s ease, height 0.4s ease;
     width: 300px;
     height: 350px;
+    position: relative;
     margin: 80px;
     margin-top: 0;
     margin-bottom: 10px;
@@ -132,4 +161,76 @@ body{
         font-weight: bold;
     }
     text-align: center;
+    
+}
+#project-card:hover{
+    transition: width 0.4s ease, height 0.4s ease;
+    width: 320px;
+    height: 370px;
+}
+#project-card:after{
+    content: "";
+    height: 70px;
+    width: 1px;  
+    position: absolute;  
+    left: -1px;
+    top: 65%;
+    transition: top, opacity;
+    transition-duration: 600ms;
+    transition-timing-function: ease;
+    background: linear-gradient(
+        transparent,
+        #7d64f9,
+        transparent
+    );
+    opacity: 0;
+}
+#project-card:after {  
+    top: 65%;
+    opacity: 0;
+}
+#project-card:hover:after {
+    top: 25%;
+    opacity: 1;
+}
+
+#about-card{
+    width: 900px;
+    height: 500px;
+    position: relative;
+    margin: 80px;
+    margin-top: 0;
+    border: 1px solid transparent;
+    border-radius: 1.25rem;
+    padding: 10px;
+    background-color: #101010;
+    h3{
+        font-weight: bold;
+    }
+    text-align: center;
+}
+#about-card:after{
+    content: "";
+    height: 70px;
+    width: 1px;  
+    position: absolute;  
+    left: -1px;
+    top: 65%;
+    transition: top, opacity;
+    transition-duration: 600ms;
+    transition-timing-function: ease;
+    background: linear-gradient(
+        transparent,
+        #7d64f9,
+        transparent
+    );
+    opacity: 0;
+}
+#about-card:after {  
+    top: 65%;
+    opacity: 0;
+}
+#about-card:hover:after {
+    top: 25%;
+    opacity: 1;
 }
