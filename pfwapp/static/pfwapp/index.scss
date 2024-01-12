@@ -1,3 +1,5 @@
+$button-colors: #a594fd;
+
 @mixin btn($name, $mLeft, $mRight) {
     ##{$name}-btn {
         display: flex;
@@ -8,25 +10,33 @@
         margin: 35px;
         margin-left: #{$mLeft};
         margin-right: #{$mRight};
-        width: 100px; 
+        width: 100px;
+        a{
+            p{
+                transition: color 0.3s ease; 
+            }
+        }
+        
     }
     ##{$name}-btn:hover{
         cursor: pointer;
-        background-color: rgba(106, 106, 255, 0.601);
-        text-align: center;
-        border-radius: 8px;
-        width: 100px;
+        a{
+            p{
+                color: $button-colors;
+            }
+        }
     }
 }
 
 body{
     font-family: sans-serif;
-    background-color: rgb(47, 47, 61);
+    background-color: #0c0c0c;
     color: white;
     margin: 0;
     margin-left: 80px;
     margin-right: 80px;
     min-width: 300px;
+    height: 100vh;
 }
 .navbar_container{
     width: 100%;
@@ -36,13 +46,11 @@ body{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
-        align-content: center;
+        align-items: center;
         padding: 10px;
         #logo{
             display: flex;
             flex-direction: row;
-            justify-content: center;
-            align-items: center;
             #mylogo{
                 width: 120px;
                 height: 120px;
@@ -53,26 +61,75 @@ body{
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            font-size: 18px;
+            font-size: 16px;
             @include btn(home, 0px, 35px);
             @include btn(project, 35px, 35px);
             @include btn(about, 35px, 0px);
             
         }
         #contact-btn{
+            width: 120px;
+            height: 40px;
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
             font-size: 18px;
-            margin: 15px;
+            margin: 35px;
             margin-left: 0;
             margin-right: 0;
+            color: black;
+            background-color: white;
+            border-radius: 8px;
+            transition: background-color 0.8s ease, color 1s ease;
+            
+        }
+        #contact-btn:hover{
+            cursor: pointer;
+            transition: background-color 0.8s ease, color 1s ease;
+            background-color: #7d64f9;
+           
+            color: white;
+            
         } 
     }
+    margin-bottom: 80px;
 }
 
-.page-det{
-    padding: 5px;
+#home-intro-card{
+    width: 500px;
+    height: 350px;
+    margin: 80px;
+    margin-top: 0;
+    border: 1px solid transparent;
+    border-radius: 1.25rem;
+    padding: 10px;
+    background-color: #101010;
+    h3{
+        font-weight: bold;
+    }
+    text-align: center;
 }
 
+.project-cards{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#project-card{
+    width: 300px;
+    height: 350px;
+    margin: 80px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 1.25rem;
+    padding: 10px;
+    background-color: #101010;
+    h3{
+        font-weight: bold;
+    }
+    text-align: center;
+}
