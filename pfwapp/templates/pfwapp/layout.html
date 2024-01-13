@@ -11,42 +11,38 @@
         {% endblock %}  
     </head>
     <body> 
-        <div class="navbar_container">
-            <div class="navbar flex-container">
-                <div id="logo" >
-                    <img id="mylogo" src="{{ logo }}" alt="logo">
-                </div>
-                <div class="pages-btn">
-                    <div class="button" id="home-btn">
-                        <a>
-                            <p>
-                                Home
-                            </p>
-                        </a>
+        <div class="main">
+            <div class="navbar_container">
+                <div class="navbar">
+                    <div id="logo" >
+                        <p>Amir.Dev</p>
                     </div>
-                    <div class="button" id="project-btn">
-                        <a>
+                    <div class="pages-btn">
+                        <div class="button" id="home-btn">
+                            <p>
+                                    Home
+                            </p>
+                        </div>
+                        <div class="button" id="project-btn">
                             <p>
                                 Projects
                             </p>
-                        </a>
-                    </div>
-                    <div class="button" id="about-btn">
-                        <a>
+                        </div>
+                        <div class="button" id="about-btn">
                             <p>
                                 About
                             </p>
-                        </a>
+                        </div>
+                        <div class="button" id="contact-btn">
+                            <p>
+                                Contact me
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div id="contact-btn">
-                    <a>
-                        Contact me
-                    </a>
-                </div>
             </div>
+            {% block body %}   
+            {% endblock %}  
         </div>
-        {% block body %}   
-        {% endblock %}  
     </body>
 </html>

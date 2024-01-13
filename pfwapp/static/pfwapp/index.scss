@@ -1,16 +1,13 @@
 $button-colors: #a594fd;
 
-@mixin btn($name, $mLeft, $mRight) {
+@mixin btn($name) {
     ##{$name}-btn {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         text-align: center;
-        margin: 35px;
-        margin-left: #{$mLeft};
-        margin-right: #{$mRight};
-        width: 100px;
+        width: 80px;
         a{
             p{
                 transition: color 0.3s ease; 
@@ -29,31 +26,67 @@ $button-colors: #a594fd;
 }
 
 body{
+    width: 100%;
     font-family: sans-serif;
     background-color: #0c0c0c;
     color: white;
     margin: 0;
-    margin-left: 80px;
-    margin-right: 80px;
-    min-width: 300px;
-    height: 100vh;
 }
+
+::-webkit-scrollbar{
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0c0c0c;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        transparent,
+        #7d64f9,
+        transparent
+    );
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        transparent,
+        #9782ff,
+        transparent
+    );
+    box-shadow: #7d64f9;
+}
+
+.main{
+    margin: 1px;
+}
+
 .navbar_container{
-    width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #0c0c0c;
+    border-bottom: 0.2px ridge #1b1b1b;
+    margin-bottom: 150px;
+    font-weight: bolder;
+    padding: 10px;
     .navbar{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-        padding: 10px;
+        
         #logo{
             display: flex;
             flex-direction: row;
             #mylogo{
-                width: 120px;
-                height: 120px;
+                width: 80px;
+                height: 80px;
             } 
         }   
         .pages-btn{
@@ -61,39 +94,31 @@ body{
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            font-size: 16px;
-            @include btn(home, 0px, 35px);
-            @include btn(project, 35px, 35px);
-            @include btn(about, 35px, 0px);
+            font-size: 14px;
+            @include btn(home);
+            @include btn(project);
+            @include btn(about);
+            @include btn(contact);
+            #contact{
+                font-weight: bold;
+            }
             
         }
-        #contact-btn{
-            width: 120px;
-            height: 40px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            font-size: 18px;
-            margin: 35px;
-            margin-left: 0;
-            margin-right: 0;
-            color: black;
-            background-color: white;
-            border-radius: 8px;
-            transition: background-color 0.8s ease, color 1s ease;
-            
-        }
-        #contact-btn:hover{
-            cursor: pointer;
-            transition: background-color 0.8s ease, color 1s ease;
-            background-color: #7d64f9;
-           
-            color: white;
-            
-        } 
     }
-    margin-bottom: 80px;
+}
+
+.pages{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    #projects{
+        margin-top: 170px;
+        margin-bottom: 170px;
+    }
+    #contact{
+        margin-top: 150px;
+    }
 }
 
 #home-intro-card{
@@ -111,7 +136,7 @@ body{
     }
     text-align: center;
 }
-#home-intro-card:after{
+#home-intro-card:before{
     content: "";
     height: 70px;
     width: 1px;  
@@ -128,11 +153,11 @@ body{
     );
     opacity: 0;
 }
-#home-intro-card:after {  
+#home-intro-card:before {  
     top: 65%;
     opacity: 0;
 }
-#home-intro-card:hover:after {
+#home-intro-card:hover:before {
     top: 25%;
     opacity: 1;
 }
@@ -140,9 +165,10 @@ body{
 
 .project-cards{
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
     align-items: center;
 }
 #project-card{
@@ -152,7 +178,6 @@ body{
     position: relative;
     margin: 80px;
     margin-top: 0;
-    margin-bottom: 10px;
     border: 1px solid transparent;
     border-radius: 1.25rem;
     padding: 10px;
@@ -168,7 +193,7 @@ body{
     width: 320px;
     height: 370px;
 }
-#project-card:after{
+#project-card:before{
     content: "";
     height: 70px;
     width: 1px;  
@@ -185,21 +210,23 @@ body{
     );
     opacity: 0;
 }
-#project-card:after {  
+#project-card:before {  
     top: 65%;
     opacity: 0;
 }
-#project-card:hover:after {
+#project-card:hover:before {
     top: 25%;
     opacity: 1;
 }
 
+#about{
+    margin: 80px;
+    margin-top: 0;
+}
 #about-card{
     width: 900px;
     height: 500px;
     position: relative;
-    margin: 80px;
-    margin-top: 0;
     border: 1px solid transparent;
     border-radius: 1.25rem;
     padding: 10px;
@@ -209,7 +236,7 @@ body{
     }
     text-align: center;
 }
-#about-card:after{
+#about-card:before{
     content: "";
     height: 70px;
     width: 1px;  
@@ -226,11 +253,18 @@ body{
     );
     opacity: 0;
 }
-#about-card:after {  
+#about-card:before {  
     top: 65%;
     opacity: 0;
 }
-#about-card:hover:after {
+#about-card:hover:before {
     top: 25%;
     opacity: 1;
+}
+
+#contact{
+    width: 100%;
+    height: 160px;
+    background-color: #111111;
+    color: #8f79ffc7;
 }
