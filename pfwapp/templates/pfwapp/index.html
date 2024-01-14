@@ -12,30 +12,30 @@
             
 {% block body %}
     <div class="pages">
-        <div class="page" id="home">
+        <div class="hidden" id="home">
             <div class="card" id="home-intro-card">
                 <h3 style="color: #a594fd;">Hello!!!</h3>
                 <p>I am Amirreza Gohari</p>
             </div>
         </div>
 
-        <div class="page" id="projects">
+        <div class="hidden" id="projects">
             <div class="project-cards">
                 {% for project in Projects %}
                     <div class="card" id="project-card">
                         <h3 style="color: #a594fd;">{{project}}</h3>
-                        <p>This is project {{project}}</p>
+                        <p>This is {{project}}</p>
                     </div>
                 {% empty %}
                     <div class="card" id="project-card">
-                        <h3 style="color: #a594fd;">{{project}}</h3>
-                        <p>This is project {{project}}</p>
+                        <h3 style="color: #a594fd;">{{project.name}}</h3>
+                        <p>This is {{project}}</p>
                     </div>
                 {% endfor %}
             </div>
         </div>
 
-        <div class="page" id="about">
+        <div class="hidden" id="about">
             <div class="card" id="about-card">
                 <div class="card" id="about-card-dets">
                     <h3 style="color: #a594fd;">Hello!!!</h3>

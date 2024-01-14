@@ -5,8 +5,8 @@ from .models import Project, Image
 
 def index(request):
     projects = Project.objects.all()
-
+    projectsName = [project.name for project in projects]
     return render(request, 'pfwapp/index.html', {
-        "Projects": projects,
+        "Projects": projectsName,
         "logo": Image.objects.get(name="logo").url
     })

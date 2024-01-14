@@ -1,8 +1,8 @@
 body {
   width: 100%;
   font-family: sans-serif;
-  background-color: #0c0c0c;
-  color: white;
+  background-color: var(--backgroundMain, #0c0c0c);
+  color: var(--textColors, rgb(238, 238, 238));
   margin: 0;
 }
 
@@ -11,7 +11,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0c0c0c;
+  background: var(--backgroundMain, #0c0c0c);
 }
 
 /* Handle */
@@ -34,8 +34,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  background-color: #0c0c0c;
-  border-bottom: 0.2px ridge #1b1b1b;
+  background-color: var(--backgroundMain, #0c0c0c);
   margin-bottom: 150px;
   font-weight: bolder;
   padding: 10px;
@@ -70,14 +69,14 @@ body {
   text-align: center;
   width: 80px;
 }
-.navbar_container .navbar .pages-btn #home-btn a p {
+.navbar_container .navbar .pages-btn #home-btn p {
   transition: color 0.3s ease;
 }
 .navbar_container .navbar .pages-btn #home-btn:hover {
   cursor: pointer;
 }
-.navbar_container .navbar .pages-btn #home-btn:hover a p {
-  color: #a594fd;
+.navbar_container .navbar .pages-btn #home-btn:hover p {
+  color: var(--buttonHColor, #a594fd);
 }
 .navbar_container .navbar .pages-btn #project-btn {
   display: flex;
@@ -87,14 +86,14 @@ body {
   text-align: center;
   width: 80px;
 }
-.navbar_container .navbar .pages-btn #project-btn a p {
+.navbar_container .navbar .pages-btn #project-btn p {
   transition: color 0.3s ease;
 }
 .navbar_container .navbar .pages-btn #project-btn:hover {
   cursor: pointer;
 }
-.navbar_container .navbar .pages-btn #project-btn:hover a p {
-  color: #a594fd;
+.navbar_container .navbar .pages-btn #project-btn:hover p {
+  color: var(--buttonHColor, #a594fd);
 }
 .navbar_container .navbar .pages-btn #about-btn {
   display: flex;
@@ -104,14 +103,14 @@ body {
   text-align: center;
   width: 80px;
 }
-.navbar_container .navbar .pages-btn #about-btn a p {
+.navbar_container .navbar .pages-btn #about-btn p {
   transition: color 0.3s ease;
 }
 .navbar_container .navbar .pages-btn #about-btn:hover {
   cursor: pointer;
 }
-.navbar_container .navbar .pages-btn #about-btn:hover a p {
-  color: #a594fd;
+.navbar_container .navbar .pages-btn #about-btn:hover p {
+  color: var(--buttonHColor, #a594fd);
 }
 .navbar_container .navbar .pages-btn #contact-btn {
   display: flex;
@@ -121,14 +120,14 @@ body {
   text-align: center;
   width: 80px;
 }
-.navbar_container .navbar .pages-btn #contact-btn a p {
+.navbar_container .navbar .pages-btn #contact-btn p {
   transition: color 0.3s ease;
 }
 .navbar_container .navbar .pages-btn #contact-btn:hover {
   cursor: pointer;
 }
-.navbar_container .navbar .pages-btn #contact-btn:hover a p {
-  color: #a594fd;
+.navbar_container .navbar .pages-btn #contact-btn:hover p {
+  color: var(--buttonHColor, #a594fd);
 }
 .navbar_container .navbar .pages-btn #contact {
   font-weight: bold;
@@ -141,8 +140,8 @@ body {
   align-items: center;
 }
 .pages #projects {
-  margin-top: 170px;
-  margin-bottom: 170px;
+  margin-top: 200px;
+  margin-bottom: 200px;
 }
 .pages #contact {
   margin-top: 150px;
@@ -157,7 +156,7 @@ body {
   border: 1px solid transparent;
   border-radius: 1.25rem;
   padding: 10px;
-  background-color: #101010;
+  background-color: var(--backgroundSecondry, #101010);
   text-align: center;
 }
 #home-intro-card h3 {
@@ -167,7 +166,7 @@ body {
 #home-intro-card:before {
   content: "";
   height: 70px;
-  width: 1px;
+  width: 2px;
   position: absolute;
   left: -1px;
   top: 65%;
@@ -175,10 +174,6 @@ body {
   transition-duration: 600ms;
   transition-timing-function: ease;
   background: linear-gradient(transparent, #7d64f9, transparent);
-  opacity: 0;
-}
-
-#home-intro-card:before {
   top: 65%;
   opacity: 0;
 }
@@ -207,7 +202,7 @@ body {
   border: 1px solid transparent;
   border-radius: 1.25rem;
   padding: 10px;
-  background-color: #101010;
+  background-color: var(--backgroundSecondry, #101010);
   text-align: center;
 }
 #project-card h3 {
@@ -218,12 +213,13 @@ body {
   transition: width 0.4s ease, height 0.4s ease;
   width: 320px;
   height: 370px;
+  cursor: pointer;
 }
 
 #project-card:before {
   content: "";
   height: 70px;
-  width: 1px;
+  width: 2px;
   position: absolute;
   left: -1px;
   top: 65%;
@@ -256,7 +252,7 @@ body {
   border: 1px solid transparent;
   border-radius: 1.25rem;
   padding: 10px;
-  background-color: #101010;
+  background-color: var(--backgroundSecondry, #101010);
   text-align: center;
 }
 #about-card h3 {
@@ -266,7 +262,7 @@ body {
 #about-card:before {
   content: "";
   height: 70px;
-  width: 1px;
+  width: 2px;
   position: absolute;
   left: -1px;
   top: 65%;
@@ -290,8 +286,56 @@ body {
 #contact {
   width: 100%;
   height: 160px;
-  background-color: #111111;
+  background-color: var(--backgroundSecondry, #101010);
   color: rgba(143, 121, 255, 0.7803921569);
+  text-align: center;
+}
+
+.style {
+  position: -webkit-sticky;
+  position: fixed;
+  top: 40%;
+  width: 2dvw;
+  height: 200px;
+}
+.style #btn-state {
+  width: 100%;
+  height: 40%;
+  top: 0;
+  position: absolute;
+  background-color: #7d64f9;
+  border-radius: 30px;
+  transition: top 0.4s ease;
+}
+.style #toggle-buttons {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  background-color: var(--backgroundSecondry, #101010);
+  border-radius: 30px;
+}
+.style #toggle-buttons .toggle-btn {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  background-color: transparent;
+  border: 0px;
+  border-radius: 30px;
+}
+.style #toggle-buttons .toggle-btn svg {
+  filter: invert(91%) sepia(0%) saturate(7500%) hue-rotate(96deg) brightness(111%) contrast(107%);
+  width: 100%;
+}
+.style #toggle-buttons .toggle-btn:hover {
+  transition: background-color 0.5 ease;
+  cursor: pointer;
+  background-color: var(--toggleButton, #1b1b1b);
 }
 
 /*# sourceMappingURL=index.css.map */
